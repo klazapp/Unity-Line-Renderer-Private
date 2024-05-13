@@ -1,17 +1,17 @@
-# DeviceCameraPermissionHandler Utility for Unity
+# LineRenderer Utility for Unity
 
 ## Introduction
-The `DeviceCameraPermissionHandler` utility, part of the `com.Klazapp.Utility` namespace, is specifically designed for Unity projects to manage camera permissions across multiple platforms. It offers a straightforward solution for requesting and checking camera permissions, ensuring a seamless integration of camera functionalities in Unity applications.
+The `LineRenderer` utility, part of the `com.Klazapp.Utility` namespace, provides a flexible and efficient solution for rendering lines in Unity projects. It allows for easy creation and manipulation of lines with customizable properties, catering to various use cases such as drawing paths, visualizing data, and more.
 
 ## Features
-- **Unified Camera Permission Handling**: Simplifies camera permission requests and checks across iOS, Android, Windows, macOS, and WebGL.
-- **Platform-Specific Implementation**: Tailored approaches for each supported platform to ensure optimal functionality.
-- **Editor Compatibility**: Special handling in the Unity editor for testing and development purposes.
+- **Dynamic Line Rendering**: Render lines dynamically based on a set of points with adjustable properties.
+- **Customizable Properties**: Control line spacing, animation, movement speed, rotation speed, and more to achieve desired visual effects.
+- **Efficient Entity Management**: Manage line entities efficiently, allowing for smooth performance even with a large number of lines.
+- **Platform Compatibility**: Compatible with all Unity-supported platforms, ensuring consistent behavior across different devices.
 
 ## Dependencies
-To use `DeviceCameraPermissionHandler`, ensure your Unity project meets the following requirements:
+To use the `LineRenderer` utility, ensure your Unity project meets the following requirements:
 - **Unity Version**: Requires Unity 2020.3 LTS or higher.
-- **Repository**: Access the utility at [DeviceCameraPermissionHandler Unity Utility](https://github.com/klazapp/Unity-Device-Camera-Permission-Private.git).
 
 ## Compatibility
 | Compatibility | URP | BRP | HDRP |
@@ -20,23 +20,44 @@ To use `DeviceCameraPermissionHandler`, ensure your Unity project meets the foll
 
 ## Installation
 1. In Unity, go to `Window` > `Package Manager`.
-2. Click the `+` icon, select `Add package from git URL...`, and input `https://github.com/klazapp/Unity-DeviceCameraPermissionHandler-Public.git`.
+2. Click the `+` icon, select `Add package from git URL...`, and input `https://github.com/klazapp/Unity-LineRenderer.git`.
 3. The package will be automatically downloaded and integrated into your project.
 
 ## Usage
-To request and check camera permissions, use the following methods:
-```csharp
-DeviceCameraPermissionHandler.Instance.RequestDeviceCameraPermission((isGranted) => {
-    // Handle the result of the permission request
-});
+To use the `LineRenderer` utility, follow these steps:
 
-bool hasPermission = DeviceCameraPermissionHandler.GetDeviceCameraPermission();
+### Setting Up Line Rendering
+1. Attach the `LineRenderer` script to a GameObject in your scene.
+2. Set the desired properties such as line spacing, animation settings, etc., in the inspector.
+
+### Creating Lines
+```csharp
+// Instantiate a LineRenderer object
+var lineRenderer = new LineRenderer();
+
+// Call OnCreated method to create a line with a list of points
+lineRenderer.OnCreated(newPoints);
 ```
 
+### Manipulating Lines
+```csharp
+// Set new points for the line
+lineRenderer.SetPoints(newPoints);
+
+// Get the number of points in the line
+int pointsCount = lineRenderer.PointsCount();
+
+// Set progress threshold at a specific index
+lineRenderer.SetProgressThresholdAtIndex(index, additionalProgress);
+```
+
+### Updating Lines
+The lines will be automatically updated based on the specified properties.
+
 ## Planned Enhancements (To-Do List)
-- **WebGL Support**: Implement a solution for camera permission handling in WebGL.
-- **Advanced Permission Management**: Additional features for more intricate permission scenarios.
-- **User-Friendly Prompts**: Enhanced UI/UX for permission requests.
+- **Bezier Curve Support**: Implement support for rendering lines using Bezier curves for smoother curves.
+- **Performance Optimization**: Optimize line rendering algorithms for better performance with large datasets.
+- **Unity Editor Extensions**: Add custom editor tools for easier line creation and manipulation within the Unity Editor.
 
 ## License
-`DeviceCameraPermissionHandler` is available under the [MIT License](LICENSE).
+`LineRenderer` is available under the [MIT License](LICENSE).

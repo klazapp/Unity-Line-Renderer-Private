@@ -1,0 +1,21 @@
+{
+  "name": "com.klazapp.linerenderer",
+  "displayName": "Unity Line Renderer Private",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "Enhance your Unity projects with the DeviceCameraPermissionHandler utility, ensuring seamless camera permission management across iOS, Android, Windows, macOS, and WebGL. Tailored for platform-specific requirements and fully compatible with Unity Editor for streamlined testing and development, this utility simplifies integrating camera functionalities into your Unity applications.",
+  "keywords": [
+    "config",
+    "file",
+    "data"
+  ],
+  "category": "Utility",
+    "author": {
+      "name": "Klazapp",
+      "email": "klazapp@klazapp.com",
+      "url": "https://www.klazapp.com"
+    },
+    "documentationUrl": "https://github.com/klazapp/Unity-Line-Renderer-Private",
+    "changelogUrl": "https://github.com/klazapp/Unity-Line-Renderer-Private",
+    "licensesUrl": "https://github.com/klazapp/Unity-Line-Renderer-Private"
+}

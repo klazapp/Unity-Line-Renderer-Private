@@ -23,11 +23,6 @@ namespace com.Klazapp.Utility
 
         public void OnCreated(List<float3> newPoints)
         {
-            foreach (var point in newPoints)
-            {
-                Debug.Log("pointy = " + point);
-            }
-            
             gameObject.SetActive(true);
             DestroyEntities();
             

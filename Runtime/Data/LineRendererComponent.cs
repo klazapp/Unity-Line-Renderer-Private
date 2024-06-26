@@ -63,6 +63,8 @@ namespace com.Klazapp.Utility
                 var position = GetPointAlongPath(progress);
                 var rotation = GetRotationAtPoint(progress);
                 entity.SetWorldPosAndRot(position, rotation);
+
+                entity.OnUpdate();
             }
         }
 
